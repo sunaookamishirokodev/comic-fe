@@ -1,12 +1,11 @@
-import SideBar from "@/components/sidebar";
-import localFont from "next/font/local";
-
-const AppleJuicesFont = localFont({ src: "../fonts/AppleJuice.ttf" });
+import Main from "@/components/main";
+import PrimarySideBar from "@/components/primary-sidebar";
 
 export default function Home() {
   return (
-    <main className={`flex`}>
-      <SideBar />
-    </main>
+    <div className="flex">
+      <PrimarySideBar />
+      <Main />
+    </div>
   );
 }

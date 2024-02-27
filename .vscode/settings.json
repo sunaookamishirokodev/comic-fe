@@ -1,8 +1,10 @@
 {
-  "cSpell.words": [
-    "biến",
-    "nzmanga",
-    "viện",
-    "Khám"
+  "cSpell.language": "en",
+  "cSpell.ignorePaths": [
+    "node_modules",
+    "./src/components/primary-sidebar.tsx",
+    "./src/components/secondary-sidebar.tsx",
+    "./src/app/layout.tsx"
   ],
+  "cSpell.words": ["khóa", "kiếm", "Nhập"]
 }
