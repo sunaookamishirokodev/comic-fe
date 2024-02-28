@@ -6,7 +6,7 @@ export default function Search() {
   const [isFocus, setIsFocus] = useState<boolean>(false);
   return (
     <div
-      className={`flex h-11 rounded-full border-2 px-2 ${isFocus ? "border-white" : "border-white/50"}`}
+      className={`flex h-9 rounded-xl border-2 px-1.5 ${isFocus ? "border-white" : "border-white/50"}`}
     >
       <div className="my-auto">
         <SearchIcon
@@ -27,8 +27,8 @@ export default function Search() {
 function SearchIcon({ fill }: { fill: string }) {
   return (
     <svg
-      height={30}
-      width={30}
+      height={25}
+      width={25}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
