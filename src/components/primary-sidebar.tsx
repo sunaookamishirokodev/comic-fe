@@ -7,6 +7,7 @@ export default function PrimarySideBar() {
       <div>
         <Link href={"/"} tabIndex={-1} className="my-6 flex">
           <Image
+            priority
             src="/logo.png"
             alt="Logo"
             width={75}
