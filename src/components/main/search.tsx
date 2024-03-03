@@ -5,7 +5,7 @@ export default function Search() {
   const [isFocus, setIsFocus] = useState<boolean>(false);
   return (
     <div
-      className={`flex h-9 rounded-xl border-2 px-1.5 ${isFocus ? "border-white" : "border-white/50"}`}
+      className={`hidden h-9 rounded-xl border-2 px-1.5 ${isFocus ? "border-white" : "border-white/50"}`}
     >
       <div className="my-auto">
         <SearchIcon

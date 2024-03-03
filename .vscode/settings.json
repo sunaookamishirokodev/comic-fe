@@ -4,7 +4,7 @@
     "node_modules",
     "./src/components/primary-sidebar.tsx",
     "./src/app/layout.tsx",
-    "./src/data/manga.json"
+    "./src/data/comic.ts"
   ],
-  "cSpell.words": ["khóa", "kiếm", "Nhập"]
+  "cSpell.words": ["Embla", "khóa", "kiếm", "Nhập"]
 }
