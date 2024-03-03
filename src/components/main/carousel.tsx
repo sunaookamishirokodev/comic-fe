@@ -11,7 +11,12 @@ const options: EmblaOptionsType = {
 };
 
 export default function Carousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+    Autoplay({
+      delay: 5000,
+      playOnInit: true,
+    }),
+  ]);
 
   return (
     <section className="embla">

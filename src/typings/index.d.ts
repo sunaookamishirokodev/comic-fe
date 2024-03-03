@@ -8,7 +8,7 @@ export interface Comic {
   banner: Url;
   description: string;
   category: string[];
-  translatorTeam: string[];
+  translatorTeam: TranslatorTeam;
   author: string[];
   createAt: Date;
   updateAt: Date;
@@ -21,6 +21,11 @@ export interface User {
   username: string;
   createAt: Date;
   premium: Boolean;
+}
+
+export interface TranslatorTeam {
+  id: string;
+  members: User[];
 }
 
 export interface Chapter {
