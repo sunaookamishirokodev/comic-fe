@@ -3,8 +3,10 @@ import { EmblaOptionsType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import comics from "../../data/comic";
+import comics from "../data/comic";
 import Link from "next/link";
+import Search from "./search";
+import lodash from "lodash";
 
 const options: EmblaOptionsType = {
   loop: true,
@@ -19,7 +21,10 @@ export default function Carousel() {
   ]);
 
   return (
-    <section className="embla">
+    <section className="embla relative">
+      <div className="relative">
+        <Search />
+      </div>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {comics.map(
@@ -37,7 +42,7 @@ export default function Carousel() {
                     className="mx-auto h-full w-auto opacity-40 blur-[0.5px]"
                     sizes="100vw"
                   />
-                  <div className="bg-linear-primary absolute left-0 top-0 h-full w-full"></div>
+                  <div className="bg-linear-primary absolute left-0 top-0 h-full w-full" />
                 </div>
 
                 <div className="absolute bottom-8 left-8 top-8 flex w-[90%] gap-5">
@@ -68,7 +73,12 @@ export default function Carousel() {
                         );
                       })}
                     </ul>
-                    <div>{description.slice(0, 300)}...</div>
+                    <div>
+                      {lodash.truncate(description, {
+                        length: 400,
+                        separator: " ",
+                      })}
+                    </div>
                     <div className="mt-2 flex gap-2">
                       <button className="flex gap-1.5 rounded-xl bg-white/80 px-5 py-2 text-black hover:bg-white">
                         <Image

@@ -1,4 +1,4 @@
-import Carousel from "@/components/main/carousel";
+import Carousel from "@/components/carousel";
 import PrimarySideBar from "@/components/primary-sidebar";
 
 export default function Home() {

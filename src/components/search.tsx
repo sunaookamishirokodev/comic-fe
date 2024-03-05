@@ -3,10 +3,9 @@ import { useState } from "react";
 
 export default function Search() {
   const [isFocus, setIsFocus] = useState<boolean>(false);
+
   return (
-    <div
-      className={`hidden h-9 rounded-xl border-2 px-1.5 ${isFocus ? "border-white" : "border-white/50"}`}
-    >
+    <div className="absolute right-2 top-2 z-50 flex rounded-lg bg-secondary/60 px-1.5 py-1">
       <div className="my-auto">
         <SearchIcon
           fill={isFocus ? "rgb(255,255,255)" : "rgba(255,255,255,0.5)"}
@@ -16,9 +15,9 @@ export default function Search() {
         onBlur={() => setIsFocus(false)}
         onFocus={() => setIsFocus(true)}
         type="text"
-        placeholder="Nhập từ khóa cần tìm kiếm"
-        className={`flex-1 bg-transparent pl-2 outline-none ${isFocus ? "text-white" : "text-white/50"}`}
-      />
+        placeholder="Nhập từ khóa"
+        className={`my-auto w-[250px] bg-transparent pl-2 outline-none ${isFocus ? "text-white" : "text-white/50"}`}
+      />{" "}
     </div>
   );
 }
@@ -26,8 +25,8 @@ export default function Search() {
 function SearchIcon({ fill }: { fill: string }) {
   return (
     <svg
-      height={25}
-      width={25}
+      height={20}
+      width={20}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
