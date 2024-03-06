@@ -1,4 +1,4 @@
-import { Chapter, Comic, TranslatorTeam, User } from "@/typings";
+import { Chapter, Comic, TranslatorTeam, User } from "@/typings/endpoints";
 
 const Shiroko: User = {
   id: "01",

@@ -5,8 +5,8 @@ export default function Search() {
   const [isFocus, setIsFocus] = useState<boolean>(false);
 
   return (
-    <div className="absolute right-2 top-2 z-50 flex rounded-lg bg-secondary/60 px-1.5 py-1">
-      <div className="my-auto">
+    <div className="flex rounded-lg bg-secondary/60 px-1.5 py-1">
+      <div className="pointer-events-none my-auto">
         <SearchIcon
           fill={isFocus ? "rgb(255,255,255)" : "rgba(255,255,255,0.5)"}
         />

@@ -5,8 +5,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import comics from "../data/comic";
 import Link from "next/link";
-import Search from "./search";
 import lodash from "lodash";
+import Navbar from "./navbar";
 
 const options: EmblaOptionsType = {
   loop: true,
@@ -22,9 +22,7 @@ export default function Carousel() {
 
   return (
     <section className="embla relative">
-      <div className="relative">
-        <Search />
-      </div>
+      <Navbar />
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {comics.map(
@@ -73,12 +71,7 @@ export default function Carousel() {
                         );
                       })}
                     </ul>
-                    <div>
-                      {lodash.truncate(description, {
-                        length: 400,
-                        separator: " ",
-                      })}
-                    </div>
+                    <div className="line-clamp-5">{description}</div>
                     <div className="mt-2 flex gap-2">
                       <button className="flex gap-1.5 rounded-xl bg-white/80 px-5 py-2 text-black hover:bg-white">
                         <Image
