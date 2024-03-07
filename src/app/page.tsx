@@ -1,4 +1,4 @@
-import Carousel from "@/components/carousel";
+import MainCarousel from "@/components/main-carousel";
 import PrimarySideBar from "@/components/primary-sidebar";
 
 export default function Home() {
@@ -7,7 +7,8 @@ export default function Home() {
       <PrimarySideBar />
       <div className="flex flex-1 bg-primary">
         <main className="flex-1">
-          <Carousel />
+          <MainCarousel />
+          
         </main>
       </div>
     </div>

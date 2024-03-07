@@ -5,14 +5,13 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import comics from "../data/comic";
 import Link from "next/link";
-import lodash from "lodash";
 import Navbar from "./navbar";
 
 const options: EmblaOptionsType = {
   loop: true,
 };
 
-export default function Carousel() {
+export default function MainCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
       delay: 5000,
@@ -21,16 +20,16 @@ export default function Carousel() {
   ]);
 
   return (
-    <section className="embla relative">
+    <section className="relative h-[70vh] w-full">
       <Navbar />
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="-ml-0 flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
           {comics.map(
             (
               { banner, thumbnail, category, aliases, description, name },
               index,
             ) => (
-              <div className="embla__slide relative" key={index}>
+              <div className="flex-[0_0_100%] min-w-0 pl-0 relative" key={index}>
                 <div className="relative flex">
                   <Image
                     src={banner}

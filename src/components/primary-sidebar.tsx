@@ -23,14 +23,14 @@ export default function PrimarySideBar() {
             href: "/explore",
           },
           {
-            title: "Thư viện",
-            icon: "/library.svg",
-            href: "/library",
+            title: "Lịch sử",
+            icon: "/history.svg",
+            href: "/history",
           },
           {
-            title: "Mới & Phổ biến",
-            icon: "/new.svg",
-            href: "/popular",
+            title: "Ưa thích",
+            icon: "/favourite.svg",
+            href: "/favourite",
           },
         ].map(({ title, icon, href }, i) => {
           return (

@@ -5,6 +5,8 @@ import { FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
 import { useState } from "react";
 
+const { NEXT_PUBLIC_NZID_CLIENT, NEXT_PUBLIC_NZID_HOST } = process.env;
+
 const getArrayDropdown = (isLogin: boolean) => {
   type _ = {
     name: string;
@@ -14,13 +16,8 @@ const getArrayDropdown = (isLogin: boolean) => {
 
   const noLogin: _[] = [
     {
-      name: "Register",
-      href: "/auth?type=register",
-      icon: "/register.svg",
-    },
-    {
       name: "Login",
-      href: "/auth?type=login",
+      href: "/login",
       icon: "/login.svg",
     },
   ];
@@ -41,7 +38,7 @@ const getArrayDropdown = (isLogin: boolean) => {
   return isLogin ? login : noLogin;
 };
 
-let isLogin = true;
+let isLogin = false;
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -60,9 +57,7 @@ export default function Navbar() {
             className={`divide-y-8 divide-transparent rounded-md bg-primary p-4 transition-all duration-300 ${isOpen ? "opacity-1 translate-x-0" : "translate-x-full opacity-0"}`}
           >
             <span className="text-sm text-white/50">
-              {isLogin
-                ? "Tùy chỉnh trải nghiệm của bạn"
-                : "Đăng nhập để tiếp tục"}
+              {isLogin ? "Trung tâm tài khoản" : "Đăng nhập để tiếp tục"}
             </span>
             <ul className="divide-y-8 divide-transparent">
               {getArrayDropdown(isLogin).map(({ name, href, icon }, i) => {
@@ -71,11 +66,13 @@ export default function Navbar() {
                     <Link href={href} className="flex gap-1">
                       <Image
                         src={icon}
-                        width={28.5}
-                        height={28.5}
+                        width={25}
+                        height={25}
                         alt={name + " Icon"}
                       />
-                      <span className="my-auto">{name}</span>
+                      <span className="my-auto text-white/80 hover:text-white/90">
+                        {name}
+                      </span>
                     </Link>
                   </li>
                 );
