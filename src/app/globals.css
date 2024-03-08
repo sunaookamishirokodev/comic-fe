@@ -6,6 +6,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+::-webkit-scrollbar {
+  @apply bg-primary w-1.5
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb {
+  @apply overflow-visible
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/40 
+}
+
 @layer utilities {
   .bg-linear-primary {
     background: linear-gradient(rgba(0,0,0,0) 0px,rgb(25 26 28) 70%);

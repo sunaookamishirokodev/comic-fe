@@ -1,5 +1,3 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-
 export interface Comic {
   id: string;
   name: string;
@@ -9,11 +7,15 @@ export interface Comic {
   description: string;
   category: string[];
   translatorTeam: TranslatorTeam;
-  author: string[];
+  author: User;
   createAt: Date;
   updateAt: Date;
-  postBy: User;
   chapters: Chapter[];
+}
+
+export interface History {
+  id: string;
+  chapters: string[];
 }
 
 export interface User {
@@ -21,6 +23,8 @@ export interface User {
   username: string;
   createAt: Date;
   premium: Boolean;
+  follow?: Follow[];
+  history?: string[];
 }
 
 export interface TranslatorTeam {
@@ -29,7 +33,9 @@ export interface TranslatorTeam {
 }
 
 export interface Chapter {
+  comicId: string;
   id: string;
+  number: number;
   title: string;
   description?: string;
   images: Url[];
@@ -38,3 +44,4 @@ export interface Chapter {
 }
 
 type Url = string;
+type Follow = string;

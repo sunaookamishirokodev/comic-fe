@@ -23,13 +23,13 @@ export default function MainCarousel() {
     <section className="relative h-[70vh] w-full">
       <Navbar />
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="-ml-0 flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
+        <div className="flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
           {comics.map(
             (
               { banner, thumbnail, category, aliases, description, name },
               index,
             ) => (
-              <div className="flex-[0_0_100%] min-w-0 pl-0 relative" key={index}>
+              <div className="relative flex-[0_0_100%]" key={index}>
                 <div className="relative flex">
                   <Image
                     src={banner}
@@ -80,7 +80,7 @@ export default function MainCarousel() {
                           height={30}
                         />
                         <span className="my-auto text-lg font-semibold">
-                          Read now
+                          Đọc ngay
                         </span>
                       </button>
                       <button className="flex gap-1.5 rounded-xl bg-black/20 px-5 py-2 hover:bg-black/50">
@@ -91,7 +91,7 @@ export default function MainCarousel() {
                           height={30}
                         />
                         <span className="my-auto text-lg font-semibold">
-                          More info
+                          Thông tin
                         </span>
                       </button>
                     </div>
