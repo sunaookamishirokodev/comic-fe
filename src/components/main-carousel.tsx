@@ -3,15 +3,15 @@ import { EmblaOptionsType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import comics from "../data/comic";
 import Link from "next/link";
 import Navbar from "./navbar";
+import { Comic, Genre } from "@/typings/endpoints";
 
 const options: EmblaOptionsType = {
   loop: true,
 };
 
-export default function MainCarousel() {
+export default function MainCarousel({ comics }: { comics: Comic[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
       delay: 5000,
@@ -25,14 +25,11 @@ export default function MainCarousel() {
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
           {comics.map(
-            (
-              { banner, thumbnail, category, aliases, description, name },
-              index,
-            ) => (
+            ({ thumbnail, genre, aliases, description, name }, index) => (
               <div className="relative flex-[0_0_100%]" key={index}>
                 <div className="relative flex">
                   <Image
-                    src={banner}
+                    src={thumbnail}
                     alt={name + " banner"}
                     width={0}
                     height={0}
@@ -57,13 +54,13 @@ export default function MainCarousel() {
                       <span className="text-md">{aliases}</span>
                     </div>
                     <ul className="flex gap-2 text-sm">
-                      {category.map((v, _i) => {
+                      {genre.map((v, _i) => {
                         return (
                           <li
                             className="rounded-full bg-white/30 px-1.5 py-1 hover:bg-white/50"
                             key={_i}
                           >
-                            <Link href={`/category/${v.toLowerCase()}`}>
+                            <Link href={`/genre/${v.toString().toLowerCase()}`}>
                               {v}
                             </Link>
                           </li>

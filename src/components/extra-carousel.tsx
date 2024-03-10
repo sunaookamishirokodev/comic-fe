@@ -21,7 +21,7 @@ export default function ExtraCarousel({
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="-ml-[0.9rem] flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
             {data.map(
-              ({ thumbnail, category, aliases, description, name }, i) => {
+              ({ thumbnail, description, name }, i) => {
                 return (
                   <div className="flex-[0_0_15%] pl-[0.9rem]" key={i}>
                     <Image
