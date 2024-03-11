@@ -6,7 +6,7 @@ import axios from "axios";
 
 const getRcmComics = async (quantity: number) => {
   const req = await axios.get(
-    `http://localhost:5000/api/recommend?quantity=${quantity}`,
+    `https://shirokodev.site/comics/recommend?quantity=${quantity}`,
   );
   return req.data;
 };
