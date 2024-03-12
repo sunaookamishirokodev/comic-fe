@@ -12,7 +12,7 @@ const options: EmblaOptionsType = {
 };
 
 export default function MainCarousel({ comics }: { comics: Comic[] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
+  const [emblaRef] = useEmblaCarousel(options, [
     Autoplay({
       delay: 5000,
       playOnInit: true,
