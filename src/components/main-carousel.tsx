@@ -12,7 +12,7 @@ const options: EmblaOptionsType = {
 };
 
 export default function MainCarousel({ comics }: { comics: Comic[] }) {
-  const [emblaRef] = useEmblaCarousel(options, [
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({
       delay: 5000,
       playOnInit: true,
@@ -45,7 +45,7 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="mb-auto w-[220px] rounded-md"
+                  className="mb-auto aspect-[9/13] w-[220px] rounded-md"
                 />
                 <div className="flex flex-col gap-1.5">
                   <div className="flex flex-col">

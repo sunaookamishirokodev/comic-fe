@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getUser = async (username: string) => {
   const req = await axios.get(
-    `https://shirokodev.site/users/?username=${username}`,
+    `https://api.shirokodev.site/users/?username=${username}`,
   );
   return req.data;
 };
