@@ -38,14 +38,14 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                 <div className="bg-linear-primary absolute left-0 top-0 h-full w-full" />
               </div>
 
-              <div className="absolute bottom-8 left-8 top-9 flex w-[90%] gap-5">
+              <div className="absolute bottom-9 left-8 top-9 flex w-[90%] gap-5">
                 <Image
                   src={thumbnail}
                   alt={name + " thumbnail"}
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="mb-auto aspect-[9/13] w-[220px] rounded-md"
+                  className="mb-auto aspect-[9/13] max-h-full w-full rounded-md"
                 />
                 <div className="flex flex-col gap-1.5">
                   <div className="flex flex-col">
@@ -65,7 +65,9 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                       );
                     })}
                   </ul>
-                  <div className="line-clamp-5">{description}</div>
+                  <div className="overflow-hidden [-webkit-box-orient:vertical] [display:-webkit-box]">
+                    {description}
+                  </div>
                   <div className="mt-2 flex gap-2">
                     <button className="flex gap-1.5 rounded-xl bg-white/80 px-5 py-2 text-black hover:bg-white">
                       <Image
