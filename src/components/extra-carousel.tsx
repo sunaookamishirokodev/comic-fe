@@ -22,7 +22,7 @@ export default function ExtraCarousel({
           <div className="-ml-[0.9rem] flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
             {data.map(({ thumbnail, name }, i) => {
               return (
-                <div className="flex-[0_0_15%] pl-[0.9rem]" key={i}>
+                <div className="w-40 pl-[0.9rem]" key={i}>
                   <Image
                     src={thumbnail}
                     alt={name + " thumbnail"}

@@ -2,7 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { MdClose, MdMenuOpen } from "react-icons/md";
+import {
+  MdClose,
+  MdMenuOpen,
+  MdOutlineExplore,
+  MdHistory,
+} from "react-icons/md";
+import { IoStarOutline } from "react-icons/io5";
 
 export default function PrimarySideBar() {
   const [isOpen, setIsOpen] = useState<boolean>(true);
@@ -30,7 +36,7 @@ export default function PrimarySideBar() {
         >
           <MdMenuOpen
             onClick={() => setIsOpen(true)}
-            className="rotate-180 text-2xl"
+            className="rotate-180 cursor-pointer text-2xl"
           />
         </div>
       </div>
@@ -39,20 +45,21 @@ export default function PrimarySideBar() {
         {[
           {
             title: "Khám phá",
-            icon: "/explore.svg",
+            icon: MdOutlineExplore,
             href: "/explore",
           },
           {
             title: "Lịch sử",
-            icon: "/history.svg",
+            icon: MdHistory,
             href: "/history",
           },
           {
             title: "Ưa thích",
-            icon: "/favourite.svg",
+            icon: IoStarOutline,
             href: "/favourite",
           },
         ].map(({ title, icon, href }, i) => {
+          const Icon = icon;
           return (
             <Link
               href={href}
@@ -61,7 +68,7 @@ export default function PrimarySideBar() {
               className="relative before:absolute before:h-full before:w-0 before:cursor-pointer before:rounded-r-full before:transition-all before:duration-200 before:hover:w-full before:hover:bg-white/10"
             >
               <div className="flex gap-3 px-2 py-1.5">
-                <Image src={icon} width={25} height={25} alt={title} />
+                <Icon className="my-auto text-2xl" />
                 <span>{title}</span>
               </div>
             </Link>
