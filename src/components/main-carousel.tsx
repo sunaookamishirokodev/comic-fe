@@ -68,7 +68,7 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                   <div className="overflow-hidden [-webkit-box-orient:vertical] [display:-webkit-box]">
                     {description}
                   </div>
-                  <div className="mt-2 flex gap-2">
+                  <div className="flex gap-2 pt-3">
                     <button className="flex gap-1.5 rounded-xl bg-white/80 px-5 py-2 text-black hover:bg-white">
                       <Image
                         src={"/read.svg"}
