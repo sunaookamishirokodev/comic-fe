@@ -23,7 +23,7 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
     <section className="relative h-[70vh] w-full">
       <Navbar />
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
+        <div className="flex max-h-[70vh] w-full touch-pan-y [backface-visibility:hidden]">
           {comics.map(({ thumbnail, genre, description, name }, index) => (
             <div className="relative flex-[0_0_100%]" key={index}>
               <div className="relative flex">
