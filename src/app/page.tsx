@@ -20,6 +20,7 @@ export default async function Home() {
         <main className="absolute right-0 top-0 w-full bg-primary">
           <MainCarousel comics={rcmComics} />
           <ExtraCarousel data={rcmComics} title="Cập nhật gần đây" />
+          <ExtraCarousel data={rcmComics} title="Nổi bật nhất" />
         </main>
       </div>
     </div>

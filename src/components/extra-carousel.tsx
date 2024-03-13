@@ -17,12 +17,12 @@ export default function ExtraCarousel({
   return (
     <section className="mt-4 divide-y-8 divide-transparent pl-4">
       <span className="text-2xl font-bold text-white/80">{title}</span>
-      <div className="relative h-[70vh] w-full">
+      <div className="relative w-full">
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="-ml-[0.9rem] flex max-h-[70vh] max-w-full touch-pan-y [backface-visibility:hidden]">
             {data.map(({ thumbnail, name }, i) => {
               return (
-                <div className="w-40 pl-[0.9rem]" key={i}>
+                <div className="group relative ml-[0.9rem] w-36" key={i}>
                   <Image
                     src={thumbnail}
                     alt={name + " thumbnail"}
@@ -31,6 +31,7 @@ export default function ExtraCarousel({
                     className="aspect-[9/14] w-full"
                     sizes="100vw"
                   />
+                  <div className="absolute left-0 top-0 size-full cursor-pointer transition-all group-hover:bg-black/40"></div>
                 </div>
               );
             })}

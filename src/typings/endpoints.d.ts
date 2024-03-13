@@ -1,3 +1,4 @@
+// Enum
 export enum Status {
   IN_PROCESS,
   COMPLETE,
@@ -5,27 +6,27 @@ export enum Status {
 }
 
 export enum Genre {
-  DRAMA = 'DRAMA',
-  ECCHI = 'ECCHI',
-  ACTION = 'ACTION',
-  COMEDY = 'COMEDY',
-  FANTASY = 'FANTASY',
-  SHOUNEN = 'SHOUNEN',
-  ADVENTURE = 'ADVENTURE',
-  MANHWA = 'MANHWA',
-  WEBTOON = 'WEBTOON',
-  ISEKAI = 'ISEKAI',
-  HAREM = 'HAREM',
-  SCI_FI = 'SCI_FI',
-  SEINEN = 'SEINEN',
-  HORROR = 'HORROR',
-  MYSTERY = 'MYSTERY',
-  ROMANCE = 'ROMANCE',
-  SCHOOL_LIFE = 'SCHOOL_LIFE',
-  SUPERNATURAL = 'SUPERNATURAL',
-  DETECTIVE = 'DETECTIVE',
-  MARTIAL = 'MARTIAL',
-  SWORDSMANSHIP = 'SWORDSMANSHIP',
+  DRAMA = "DRAMA",
+  ECCHI = "ECCHI",
+  ACTION = "ACTION",
+  COMEDY = "COMEDY",
+  FANTASY = "FANTASY",
+  SHOUNEN = "SHOUNEN",
+  ADVENTURE = "ADVENTURE",
+  MANHWA = "MANHWA",
+  WEBTOON = "WEBTOON",
+  ISEKAI = "ISEKAI",
+  HAREM = "HAREM",
+  SCI_FI = "SCI_FI",
+  SEINEN = "SEINEN",
+  HORROR = "HORROR",
+  MYSTERY = "MYSTERY",
+  ROMANCE = "ROMANCE",
+  SCHOOL_LIFE = "SCHOOL_LIFE",
+  SUPERNATURAL = "SUPERNATURAL",
+  DETECTIVE = "DETECTIVE",
+  MARTIAL = "MARTIAL",
+  SWORDSMANSHIP = "SWORDSMANSHIP",
 }
 
 // Interfaces
@@ -34,7 +35,6 @@ export interface Comic {
   name: string;
   aliases?: string[];
   thumbnail: string;
-  banner?: string;
   description: string;
   genre: Genre[];
   translatorTeam?: TranslatorTeam;
