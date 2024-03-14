@@ -20,10 +20,9 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
   ]);
 
   return (
-    <section className="relative h-[70vh] w-full">
-      <Navbar />
+    <section className="h-[70vh] w-full sm:h-[60vh] md:h-[70vh] 2xl:h-[70vh]">
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex max-h-[70vh] w-full touch-pan-y [backface-visibility:hidden]">
+        <div className="flex max-h-[70vh] w-full touch-pan-y [backface-visibility:hidden] sm:h-[60vh] md:h-[70vh] 2xl:h-[70vh]">
           {comics.map(({ thumbnail, genre, description, name }, index) => (
             <div className="relative flex-[0_0_100%]" key={index}>
               <div className="relative flex">
@@ -38,20 +37,22 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                 <div className="bg-linear-primary absolute left-0 top-0 h-full w-full" />
               </div>
 
-              <div className="absolute bottom-9 left-8 top-9 flex w-[90%] gap-5">
+              <div className="absolute bottom-9 left-8 right-8 top-10 flex flex-col gap-5 sm:flex-row">
                 <Image
                   src={thumbnail}
                   alt={name + " thumbnail"}
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="mb-auto aspect-[9/13] max-h-full w-full rounded-md"
+                  className="m-auto mb-auto aspect-[9/13] max-h-full w-auto rounded-md sm:m-0"
                 />
                 <div className="flex flex-col gap-1.5">
                   <div className="flex flex-col">
-                    <span className="text-5xl font-bold">{name}</span>
+                    <span className="hidden font-bold sm:inline-block sm:text-3xl md:text-4xl xl:text-5xl">
+                      {name}
+                    </span>
                   </div>
-                  <ul className="flex gap-2 text-sm">
+                  <ul className="hidden gap-2 text-sm lg:flex">
                     {genre.map((v, _i) => {
                       return (
                         <li
@@ -65,10 +66,10 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                       );
                     })}
                   </ul>
-                  <div className="overflow-hidden [-webkit-box-orient:vertical] [display:-webkit-box]">
+                  <div className="hidden overflow-x-hidden [-webkit-box-orient:vertical] sm:[display:-webkit-box]">
                     {description}
                   </div>
-                  <div className="flex gap-2 pt-3">
+                  <div className="hidden gap-2 pt-3 sm:flex">
                     <button className="flex gap-1.5 rounded-xl bg-white/80 px-5 py-2 text-black hover:bg-white">
                       <Image
                         src={"/read.svg"}
@@ -76,11 +77,11 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                         width={30}
                         height={30}
                       />
-                      <span className="my-auto text-lg font-semibold">
+                      <span className="my-auto inline-block text-lg">
                         Đọc ngay
                       </span>
                     </button>
-                    <button className="flex gap-1.5 rounded-xl bg-black/20 px-5 py-2 hover:bg-black/50">
+                    <button className="flex gap-1.5 rounded-xl bg-black/20 px-5 py-2 hover:bg-black/50 sm:mt-2">
                       <Image
                         src={"/info.svg"}
                         alt="Information Icon"

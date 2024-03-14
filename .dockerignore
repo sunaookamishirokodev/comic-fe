@@ -1,0 +1,5 @@
+Dockerfile.dockerignore.gitignore;
+prettier.config.js;
+node_modules;
+README.md;
+tsconfig.json.next.git;

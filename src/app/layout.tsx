@@ -1,13 +1,5 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
-import PrimarySideBar from "@/components/primary-sidebar";
-import Footer from "@/components/footer";
-
-const font = Be_Vietnam_Pro({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 export const metadata: Metadata = {
   title: "Home - ComicVN",
@@ -22,15 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <body className={`${font.className} flex text-white`}>
-        <PrimarySideBar />
-        <div className="relative max-h-screen flex-1 overflow-x-hidden ">
-          <main className="absolute right-0 top-0 w-full bg-primary">
-            {children}
-            <Footer />
-          </main>
-        </div>
-      </body>
+      {children}
     </html>
   );
 }

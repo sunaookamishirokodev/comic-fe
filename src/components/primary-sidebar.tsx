@@ -1,17 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import {
   MdClose,
-  MdMenuOpen,
   MdOutlineExplore,
   MdHistory,
 } from "react-icons/md";
 import { IoStarOutline } from "react-icons/io5";
 
-export default function PrimarySideBar() {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+export default function PrimarySideBar({isOpen, setIsOpen}: {isOpen: boolean; setIsOpen: Dispatch<SetStateAction<boolean>>}) {
   return (
     <div
       className={`flex h-screen select-none flex-col gap-2 bg-secondary transition-all ${isOpen ? "w-44" : "w-0"}`}
@@ -31,14 +29,6 @@ export default function PrimarySideBar() {
           onClick={() => setIsOpen(false)}
           className="absolute right-1 top-1 z-50 cursor-pointer text-2xl"
         />
-        <div
-          className={`absolute -right-8 top-0 z-40 rounded-br-xl bg-secondary p-1 transition-all delay-150 ${isOpen ? "-translate-x-full opacity-0" : "translate-x-0 opacity-100"}`}
-        >
-          <MdMenuOpen
-            onClick={() => setIsOpen(true)}
-            className="rotate-180 cursor-pointer text-2xl"
-          />
-        </div>
       </div>
 
       <ul className="flex flex-col gap-0.5">
