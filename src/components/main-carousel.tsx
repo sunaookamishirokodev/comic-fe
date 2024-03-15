@@ -4,7 +4,6 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "./navbar";
 import { Comic } from "@/typings/endpoints";
 
 const options: EmblaOptionsType = {
@@ -27,6 +26,7 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
             <div className="relative flex-[0_0_100%]" key={index}>
               <div className="relative flex">
                 <Image
+                  priority
                   src={thumbnail}
                   alt={name + " banner"}
                   width={0}
