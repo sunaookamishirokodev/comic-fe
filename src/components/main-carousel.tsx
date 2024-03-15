@@ -70,28 +70,30 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                     {description}
                   </div>
                   <div className="hidden gap-2 pt-3 sm:flex">
-                    <button className="flex gap-1.5 rounded-xl bg-white/80 px-5 py-2 text-black hover:bg-white">
-                      <Image
-                        src={"/read.svg"}
-                        alt="Read Icon"
-                        width={30}
-                        height={30}
-                      />
-                      <span className="my-auto inline-block text-lg">
-                        Đọc ngay
-                      </span>
-                    </button>
-                    <button className="flex gap-1.5 rounded-xl bg-black/20 px-5 py-2 hover:bg-black/50 sm:mt-2">
-                      <Image
-                        src={"/info.svg"}
-                        alt="Information Icon"
-                        width={30}
-                        height={30}
-                      />
-                      <span className="my-auto text-lg font-semibold">
-                        Thông tin
-                      </span>
-                    </button>
+                    {[
+                      {
+                        src: "/read.svg",
+                        alt: "Read Icon",
+                        text: "Đọc ngay",
+                      },
+                      {
+                        src: "/info.svg",
+                        alt: "Info Icon",
+                        text: "Thông tin",
+                      },
+                    ].map(({ src, alt, text }, i) => {
+                      return (
+                        <button
+                          key={i}
+                          className="flex gap-1.5 rounded-xl px-5 py-2 odd:bg-white/80 odd:text-black even:mt-2 even:bg-black/20 odd:hover:bg-white even:hover:bg-black/50 even:sm:mt-0"
+                        >
+                          <Image src={src} alt={alt} width={30} height={30} />
+                          <span className="my-auto inline-block text-lg">
+                            {text}
+                          </span>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
