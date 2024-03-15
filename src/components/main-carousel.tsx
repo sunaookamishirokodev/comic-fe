@@ -44,7 +44,7 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                   width={0}
                   height={0}
                   sizes="100vw"
-                  className="m-auto mb-auto aspect-[9/13] max-h-full w-auto rounded-md sm:m-0"
+                  className="m-auto mb-auto aspect-[9/13] h-full w-auto rounded-md object-fill sm:m-0"
                 />
                 <div className="flex flex-col gap-1.5">
                   <div className="flex flex-col">

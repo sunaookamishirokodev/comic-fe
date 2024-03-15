@@ -20,7 +20,7 @@ export default function RootTemplate({
     <body className={`${font.className} relative flex text-white`}>
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
       <PrimarySideBar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="relative max-h-screen flex-1 overflow-x-hidden ">
+      <div className="relative max-h-screen flex-1 overflow-x-hidden">
         <main className="absolute right-0 top-0 w-full bg-primary">
           {children}
           <Footer />

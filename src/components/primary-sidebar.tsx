@@ -2,14 +2,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-import {
-  MdClose,
-  MdOutlineExplore,
-  MdHistory,
-} from "react-icons/md";
+import { MdClose, MdOutlineExplore, MdHistory } from "react-icons/md";
 import { IoStarOutline } from "react-icons/io5";
 
-export default function PrimarySideBar({isOpen, setIsOpen}: {isOpen: boolean; setIsOpen: Dispatch<SetStateAction<boolean>>}) {
+export default function PrimarySideBar({
+  isOpen,
+  setIsOpen,
+}: {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
     <div
       className={`flex h-screen select-none flex-col gap-2 bg-secondary transition-all ${isOpen ? "w-44" : "w-0"}`}

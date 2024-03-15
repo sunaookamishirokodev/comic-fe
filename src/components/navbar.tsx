@@ -56,21 +56,21 @@ export default function Navbar({
       <Search />
       <BiCategoryAlt
         onClick={() => setIsOpen(!isOpen)}
-        className="my-auto cursor-pointer text-3xl text-white/80 hover:text-white/90"
+        className="my-auto cursor-pointer text-3xl text-white/90 hover:text-white/90 sm:text-white/80"
       />
       <FaRegCircleUser
         onClick={() => setIsLocalOpen(!isLocalOpen)}
-        className="my-auto cursor-pointer text-3xl text-white/80 hover:text-white/90"
+        className="hover:text-white/9 my-auto cursor-pointer text-3xl text-white/90 sm:text-white/80"
       />
 
-      <div className="absolute right-0 top-10 overflow-hidden">
+      <div className="absolute right-0 top-10 w-max overflow-hidden">
         <div
           className={`divide-y-8 divide-transparent rounded-md bg-primary p-4 transition-all duration-300 ${isLocalOpen ? "opacity-1 translate-x-0" : "translate-x-full opacity-0"}`}
         >
           <span className="text-sm text-white/50">
             {isLogin ? "Trung tâm tài khoản" : "Đăng nhập để tiếp tục"}
           </span>
-          <ul className="divide-y-8 divide-transparent">
+          <ul className="flex flex-col gap-2">
             {getArrayDropdown(isLogin).map(({ name, href, icon }, i) => {
               const Icon = icon;
               return (
