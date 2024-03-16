@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-import { MdClose, MdOutlineExplore, MdHistory } from "react-icons/md";
+import { MdOutlineExplore, MdHistory } from "react-icons/md";
 import { IoStarOutline } from "react-icons/io5";
 
 export default function PrimarySideBar({
@@ -14,7 +14,7 @@ export default function PrimarySideBar({
 }) {
   return (
     <div
-      className={`flex h-screen select-none flex-col gap-2 bg-secondary transition-all ${isOpen ? "w-44" : "w-0"}`}
+      className={`flex h-screen select-none flex-col gap-2 bg-secondary transition-all ${isOpen ? "w-0 sm:w-44" : "w-full sm:w-0"}`}
     >
       <div className="relative">
         <Link href={"/"} tabIndex={-1} className="my-6 flex">
@@ -27,10 +27,6 @@ export default function PrimarySideBar({
             className="mx-auto"
           />
         </Link>
-        <MdClose
-          onClick={() => setIsOpen(false)}
-          className="absolute right-1 top-1 z-50 cursor-pointer text-2xl"
-        />
       </div>
 
       <ul className="flex flex-col gap-0.5">

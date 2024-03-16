@@ -10,8 +10,8 @@ const getUser = async (username: string) => {
 export default async function UserPage({
   params,
 }: {
-  params: { slug: string };
+  params: { username: string };
 }) {
-  const user = await getUser(params.slug);
+  const user = await getUser(params.username);
   return <main>{user === 404 && "User not found"}</main>;
 }

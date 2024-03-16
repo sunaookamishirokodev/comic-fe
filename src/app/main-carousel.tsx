@@ -59,7 +59,10 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                           className="rounded-full bg-white/30 px-1.5 py-1 first-letter:uppercase hover:bg-white/50"
                           key={_i}
                         >
-                          <Link href={`/genre/${v.toString().toLowerCase()}`}>
+                          <Link
+                            tabIndex={-1}
+                            href={`/genre/${v.toString().toLowerCase()}`}
+                          >
                             {v.toLowerCase()}
                           </Link>
                         </li>
@@ -84,6 +87,7 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                     ].map(({ src, alt, text }, i) => {
                       return (
                         <button
+                          tabIndex={-1}
                           key={i}
                           className="flex gap-1.5 rounded-xl px-5 py-2 odd:bg-white/80 odd:text-black even:mt-2 even:bg-black/20 odd:hover:bg-white even:hover:bg-black/50 even:sm:mt-0"
                         >
