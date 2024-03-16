@@ -1,7 +1,7 @@
 "use client";
-import PrimarySideBar from "@/components/primary-sidebar";
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+import PrimarySideBar from "@/app/primary-sidebar";
+import Footer from "@/app/footer";
+import Navbar from "@/app/navbar";
 import { Be_Vietnam_Pro } from "next/font/google";
 import { useState } from "react";
 const font = Be_Vietnam_Pro({

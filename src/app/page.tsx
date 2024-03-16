@@ -1,5 +1,5 @@
-import ExtraCarousel from "@/components/extra-carousel";
-import MainCarousel from "@/components/main-carousel";
+import ExtraCarousel from "@/app/extra-carousel";
+import MainCarousel from "@/app/main-carousel";
 import axios from "axios";
 
 const getRcmComics = async (quantity: number) => {
