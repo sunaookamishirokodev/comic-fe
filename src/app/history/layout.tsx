@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "History - NZManga",
+  title: "History - MangaVN",
 };
 
 export default function RootLayout({
