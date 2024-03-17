@@ -1,4 +1,4 @@
-import ExtraCarousel from "@/app/extra-carousel";
+import ExtraCarousel from "@/components/extra-carousel";
 import MainCarousel from "@/app/main-carousel";
 import axios from "axios";
 

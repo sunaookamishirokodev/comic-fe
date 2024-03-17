@@ -31,7 +31,7 @@ export default function ExtraCarousel({
                     className="aspect-[9/14] w-full"
                     sizes="100vw"
                   />
-                  <div className="absolute left-0 top-0 size-full cursor-pointer transition-all group-hover:bg-black/40"></div>
+                  <div className="absolute left-0 top-0 size-full cursor-pointer transition-all group-hover:sm:bg-black/40"></div>
                 </div>
               );
             })}

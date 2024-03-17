@@ -14,7 +14,7 @@ export default function PrimarySideBar({
 }) {
   return (
     <div
-      className={`flex h-screen select-none flex-col gap-2 bg-secondary transition-all ${isOpen ? "w-0 sm:w-44" : "w-full sm:w-0"}`}
+      className={`flex h-screen select-none flex-col gap-2 bg-secondary transition-all ${isOpen ? "w-0 lg:w-44" : "w-full lg:w-0"}`}
     >
       <div className="relative">
         <Link href={"/"} tabIndex={-1} className="my-6 flex">
@@ -22,8 +22,8 @@ export default function PrimarySideBar({
             priority
             src="/logo.png"
             alt="Logo"
-            width={75}
-            height={75}
+            width={100}
+            height={100}
             className="mx-auto"
           />
         </Link>

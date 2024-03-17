@@ -39,6 +39,7 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
 
               <div className="absolute bottom-9 left-8 right-8 top-10 flex flex-col gap-5 sm:flex-row">
                 <Image
+                  priority
                   src={thumbnail}
                   alt={name + " thumbnail"}
                   width={0}
@@ -48,22 +49,20 @@ export default function MainCarousel({ comics }: { comics: Comic[] }) {
                 />
                 <div className="flex flex-col gap-1.5">
                   <div className="flex flex-col">
-                    <span className="hidden font-bold sm:inline-block sm:text-3xl md:text-4xl xl:text-5xl">
+                    <span className="-mt-3 text-center sm:text-left text-xl font-bold sm:mt-0 sm:inline-block sm:text-3xl md:text-4xl xl:text-5xl">
                       {name}
                     </span>
                   </div>
                   <ul className="hidden gap-2 text-sm lg:flex">
                     {genre.map((v, _i) => {
+                      const _v = v.toLowerCase();
                       return (
                         <li
                           className="rounded-full bg-white/30 px-1.5 py-1 first-letter:uppercase hover:bg-white/50"
                           key={_i}
                         >
-                          <Link
-                            tabIndex={-1}
-                            href={`/genre/${v.toString().toLowerCase()}`}
-                          >
-                            {v.toLowerCase()}
+                          <Link tabIndex={-1} href={`/genre/${_v}`}>
+                            {_v.includes("_") ? _v.split("_").join(" ") : _v}
                           </Link>
                         </li>
                       );

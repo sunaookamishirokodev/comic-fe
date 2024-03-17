@@ -7,7 +7,7 @@ body::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar {
-  @apply bg-primary w-1.5
+  @apply bg-primary w-1.5 hidden sm:block
 }
 
 ::-webkit-scrollbar,

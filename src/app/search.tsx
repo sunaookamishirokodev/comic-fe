@@ -15,7 +15,7 @@ export default function Search() {
         if (inputRef.current) inputRef.current.focus();
       }}
     >
-      <div className="pointer-events-none my-auto">
+      <div className="my-auto">
         <IoSearchOutline
           className={`text-xl ${isFocus ? "text-white" : "text-white/50"}`}
         />
@@ -26,8 +26,8 @@ export default function Search() {
         onFocus={() => setIsFocus(true)}
         type="text"
         placeholder="Nhập từ khóa"
-        className={`my-auto bg-transparent outline-none transition-all duration-200 ${isFocus ? "w-[250px] pl-2  text-white" : "w-0 pl-0 text-white/50"}`}
-      />{" "}
+        className={`my-auto bg-transparent outline-none transition-all ${isFocus ? "w-full pl-2" : "w-0 pl-0"}`}
+      />
     </div>
   );
 }
