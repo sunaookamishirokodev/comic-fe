@@ -31,7 +31,11 @@ export default function ExtraCarousel({
                     className="aspect-[9/14] w-full"
                     sizes="100vw"
                   />
-                  <div className="absolute left-0 top-0 size-full cursor-pointer transition-all group-hover:sm:bg-black/40"></div>
+                  <div className="absolute left-0 top-0 flex size-full cursor-pointer bg-gradient-to-b from-black/0 to-black/100 transition-all group-hover:bg-black/40 sm:bg-black/0">
+                    <span className="mx-auto mt-auto text-center text-[9px]">
+                      {name}
+                    </span>
+                  </div>
                 </div>
               );
             })}

@@ -8,12 +8,13 @@ export default function Contact() {
   const emailRef = useRef<null | HTMLInputElement>(null);
   const contentRef = useRef<null | HTMLInputElement>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
-    e.preventDefault()
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Submit");
   };
 
   return (
-    <form>
+    <form method="post" onSubmit={handleSubmit} action="#">
       {[
         {
           name: "email",
@@ -56,9 +57,16 @@ export default function Contact() {
           </label>
         );
       })}
-      <div className="float-right mt-2 flex gap-2">
-        <button type="reset">Reset</button>
-        <button type="submit" onSubmit={handleSubmit}>Gửi</button>
+      <div className="float-right mt-2 flex gap-1">
+        <button type="reset" className="px-2 py-1">
+          Reset
+        </button>
+        <button
+          type="submit"
+          className="rounded-xl bg-white px-2 py-1 text-black"
+        >
+          Gửi
+        </button>
       </div>
     </form>
   );

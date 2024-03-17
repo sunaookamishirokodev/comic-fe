@@ -49,7 +49,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     tabIndex={-1}
                     target="_blank"
-                    className="text-sm text-white/80 hover:text-white"
+                    className="text-sm text-white/80 hover:sm:text-white"
                   >
                     {name}
                   </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     tabIndex={-1}
                     target="_blank"
-                    className="text-sm text-white/80 hover:text-white"
+                    className="text-sm text-white/80 hover:sm:text-white"
                   >
                     {name}
                   </Link> */}
