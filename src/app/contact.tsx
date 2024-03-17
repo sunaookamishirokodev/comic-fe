@@ -14,7 +14,7 @@ export default function Contact() {
   };
 
   return (
-    <form method="post" onSubmit={handleSubmit} action="#">
+    <form method="post" onSubmit={handleSubmit}>
       {[
         {
           name: "email",
